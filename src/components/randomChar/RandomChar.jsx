@@ -8,20 +8,12 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 class RandomChar extends Component {
   state = {
     char: {},
-    loading: true
+    loading: true,
+    error: false
   }
 
   componentDidMount() {
-    console.log('mount')
     this.updateChar();
-  }
-
-  componentDidUpdate(prevProps, prevState, snapshot) {
-    console.log('update')
-  }
-
-  componentWillUnmount() {
-    console.log('unmount')
   }
 
   marvelService = new MarvelService();
