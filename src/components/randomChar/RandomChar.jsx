@@ -6,14 +6,22 @@ import Spinner from "../spiner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 
 class RandomChar extends Component {
-  constructor(props) {
-    super(props);
-    this.updateChar();
-  }
-
   state = {
     char: {},
     loading: true
+  }
+
+  componentDidMount() {
+    console.log('mount')
+    this.updateChar();
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log('update')
+  }
+
+  componentWillUnmount() {
+    console.log('unmount')
   }
 
   marvelService = new MarvelService();
@@ -34,6 +42,11 @@ class RandomChar extends Component {
   }
   updateChar = () => {
     const id = Math.floor(Math.random() * (1011400 - 1011000) + 1011000);
+
+    this.setState({
+      loading: true
+    });
+
     this.marvelService
       .getCharacter(id)
       .then(this.onCharLoaded)
@@ -59,7 +72,11 @@ class RandomChar extends Component {
           <p className="randomchar__title">
             Or choose another one
           </p>
-          <button className="button button__main">
+          <button
+            className="button button__main"
+            type='button'
+            onClick={this.updateChar}
+          >
             <div className="inner">try it</div>
           </button>
           <img src={mjolnir} alt="mjolnir" className="randomchar__decoration"/>
