@@ -3,7 +3,7 @@ const API_KEY = process.env.REACT_APP_API_KEY;
 
 class MarvelService {
 
-  _baseOffset = 1235;
+  _baseOffset = 1000;
   getResource = async (url) => {
     let res = await fetch(url);
 
