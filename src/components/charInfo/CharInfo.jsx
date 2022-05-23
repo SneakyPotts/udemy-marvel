@@ -5,6 +5,8 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 import Spinner from "../spiner/Spinner";
 import Skeleton from "../skeleton/Skeleton";
 
+import PropTypes from 'prop-types';
+
 class CharInfo extends Component {
   state = {
     char: null,
@@ -122,6 +124,10 @@ const View = ({char}) => {
       </ul>
     </>
   )
+}
+
+CharInfo.propTypes = {
+  charId: PropTypes.number,
 }
 
 export default CharInfo;
