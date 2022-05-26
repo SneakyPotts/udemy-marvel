@@ -14,7 +14,7 @@ const CharList = (props) => {
   const {loading, error, getAllCharacters, clearError} = useMarvelService();
 
   useEffect(() => {
-    onRequest();
+    onRequest(offset, true);
 
     //todo: if u want use scroll pagination use next line code
 
@@ -26,7 +26,7 @@ const CharList = (props) => {
       window.removeEventListener('scroll', onScrollPagination);
       return;
     }
-    if ((window.pageYOffset + document.documentElement.clientHeight) >= (document.documentElement.scrollHeight - 1)) {
+    if ((window.scrollY + document.documentElement.clientHeight) >= (document.documentElement.scrollHeight - 1)) {
       onRequest(offset, true);
     }
   }
@@ -35,6 +35,8 @@ const CharList = (props) => {
     initial
       ? setNewItemsLoading(false)
       : setNewItemsLoading(true);
+
+    clearError();
     getAllCharacters(offset)
       .then(onCharListLoaded)
   }
@@ -79,7 +81,7 @@ const CharList = (props) => {
             props.onCharSelected(id);
             focusOnItem(index);
           }}
-          onKeyPress={(e) => {
+          onKeyDown={(e) => {
             if (e.key === ' ' || e.key === "Enter") {
               e.preventDefault();
               props.onCharSelected(id);
