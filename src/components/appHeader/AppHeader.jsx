@@ -17,14 +17,14 @@ const AppHeader = () => {
             <NavLink
               end
               style={activeStyle}
-              to="/"
+              to="/udemy-marvel"
             >Characters</NavLink>
           </li>
           /
           <li>
             <NavLink
               style={activeStyle}
-              to="/comics"
+              to="/udemy-marvel/comics"
             >Comics</NavLink>
           </li>
         </ul>
