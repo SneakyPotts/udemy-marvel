@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/udemy-marvel/static/css/main.6f428e5d.chunk.css",
-    "main.js": "/udemy-marvel/static/js/main.9f9c94b2.chunk.js",
-    "main.js.map": "/udemy-marvel/static/js/main.9f9c94b2.chunk.js.map",
+    "main.js": "/udemy-marvel/static/js/main.6c5dfb5f.chunk.js",
+    "main.js.map": "/udemy-marvel/static/js/main.6c5dfb5f.chunk.js.map",
     "runtime-main.js": "/udemy-marvel/static/js/runtime-main.321788a1.js",
     "runtime-main.js.map": "/udemy-marvel/static/js/runtime-main.321788a1.js.map",
     "static/js/2.8906f7ec.chunk.js": "/udemy-marvel/static/js/2.8906f7ec.chunk.js",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.321788a1.js",
     "static/js/2.8906f7ec.chunk.js",
     "static/css/main.6f428e5d.chunk.css",
-    "static/js/main.9f9c94b2.chunk.js"
+    "static/js/main.6c5dfb5f.chunk.js"
   ]
 }
